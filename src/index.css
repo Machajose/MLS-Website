@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Palette — clinical paper + specimen green + blood-tube coral */
+  --color-paper: #F6F4EC;
+  --color-paper-dim: #EDE9DB;
+  --color-ink: #14231C;
+  --color-ink-soft: #45564C;
+
+  --color-lab-900: #0B2E23;
+  --color-lab-800: #0F4C3A;
+  --color-lab-700: #146349;
+  --color-lab-600: #1B8A5A;
+  --color-lab-500: #2FA46A;
+  --color-lab-100: #DCEEE1;
+  --color-lab-50: #EFF6F1;
+
+  --color-coral-600: #D8492F;
+  --color-coral-500: #E8593F;
+  --color-coral-100: #FBE3DA;
+
+  /* Dark mode surfaces — same family, deep specimen-slide tones */
+  --color-dark-bg: #0C1A15;
+  --color-dark-surface: #102420;
+  --color-dark-border: #1D3A32;
+  --color-dark-ink: #EAF3EC;
+  --color-dark-ink-soft: #9FB6AA;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .dark body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-ink);
+  }
+  ::selection {
+    background-color: var(--color-lab-600);
+    color: var(--color-paper);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-coral-500);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Specimen-label corner brackets — the signature motif */
+  .crosshair {
+    position: relative;
+  }
+  .crosshair::before,
+  .crosshair::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid var(--color-lab-600);
+    opacity: 0.55;
+  }
+  .crosshair::before {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+  }
+  .crosshair::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
+  }
+
+  .label-tag {
+    font-family: var(--font-mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+  }
+
+  .dotted-rule {
+    background-image: radial-gradient(circle, var(--color-ink-soft) 1px, transparent 1px);
+    background-size: 6px 1px;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    height: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
