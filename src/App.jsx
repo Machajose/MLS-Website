@@ -8,6 +8,7 @@ import Committee from "./components/Committee";
 import Join from "./components/Join";
 import Footer from "./components/Footer";
 import useDarkMode from "./hooks/useDarkMode";
+import JoinForm from "./components/JoinForm";
 
 export default function App() {
   const [dark, setDark] = useDarkMode();
