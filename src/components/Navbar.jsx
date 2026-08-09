@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import logo from "../assets/MUTMLSAlogo.jpeg";
 const LINKS = [
   { href: "#about", label: "About" },
   { href: "#focus", label: "Focus Areas" },
@@ -27,18 +27,11 @@ export default function Navbar({ dark, setDark }) {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
-        <a href="#top" className="flex items-center gap-2.5">
-          <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
-            <rect width="32" height="32" rx="7" fill="#0F4C3A" />
-            <circle cx="16" cy="16" r="8" fill="none" stroke="#EFF6F1" strokeWidth="1.6" />
-            <circle cx="16" cy="16" r="2.3" fill="#E8593F" />
-            <line x1="16" y1="4" x2="16" y2="8.5" stroke="#EFF6F1" strokeWidth="1.6" />
-            <line x1="16" y1="23.5" x2="16" y2="28" stroke="#EFF6F1" strokeWidth="1.6" />
-          </svg>
-          <span className="font-display text-lg font-semibold tracking-tight text-lab-900 dark:text-dark-ink">
-            MUTMLSA
-          </span>
-        </a>
+        <a href="#top" className="flex items-center">
+  <span className="font-display text-lg font-semibold tracking-tight text-lab-900 dark:text-dark-ink">
+    MUTMLSA
+  </span>
+</a>
 
         <ul className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
@@ -115,17 +108,6 @@ export default function Navbar({ dark, setDark }) {
 
 function SunIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" />
-    </svg>
+    <img src={logo} alt="MUTMLSA logo" className="h-8 w-8 object-contain" />
   );
 }

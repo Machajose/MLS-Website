@@ -3,12 +3,14 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Focus from "./components/Focus";
+import Cohorts from "./components/Cohorts";
 import Events from "./components/Events";
+import Moments from "./components/Moments";
 import Committee from "./components/Committee";
 import Join from "./components/Join";
 import Footer from "./components/Footer";
+import Reveal from "./components/Reveal";
 import useDarkMode from "./hooks/useDarkMode";
-import JoinForm from "./components/JoinForm";
 
 export default function App() {
   const [dark, setDark] = useDarkMode();
@@ -19,11 +21,21 @@ export default function App() {
       <Navbar dark={dark} setDark={setDark} />
       <main>
         <Hero />
-        <About />
+        <Reveal>
+          <About />
+        </Reveal>
         <Focus />
-        <Events />
+        <Cohorts />
+        <Reveal>
+          <Events />
+        </Reveal>
+        <Reveal>
+          <Moments />
+        </Reveal>
         <Committee />
-        <Join />
+        <Reveal>
+          <Join />
+        </Reveal>
       </main>
       <Footer />
     </div>
