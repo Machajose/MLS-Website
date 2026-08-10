@@ -1,14 +1,14 @@
-import { motion } from "motion/react";
+import AmbientField from "./AmbientField";
 
 export default function About() {
   return (
     <section id="about" className="relative overflow-hidden border-t border-ink/10 bg-lab-50/60 dark:border-dark-border dark:bg-dark-surface/40 py-20 md:py-28">
-      <DriftingParasite />
+      <AmbientField redCells={2} whiteCells={1} foreign={{ type: "parasite" }} />
 
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <div className="grid gap-12 md:grid-cols-[0.4fr_0.6fr]">
           <div>
-            <span className="label-tag text-lab-700 dark:text-lab-500">Test: 001 / Overview</span>
+            <span className="label-tag text-lab-700 dark:text-lab-500"> / Overview</span>
             <h2 className="mt-3 font-display text-3xl font-semibold text-lab-900 md:text-4xl dark:text-dark-ink">
               Who we are
             </h2>
@@ -49,48 +49,5 @@ export default function About() {
         </p>
       </div>
     </section>
-  );
-}
-
-function DriftingParasite() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      <motion.div
-        className="absolute"
-        style={{ top: "6%", left: "78%", width: 150, height: 55 }}
-        animate={{
-          x: [0, -30, 0, 30, 0],
-          y: [0, 10, 0, -10, 0],
-        }}
-        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <Trypanosome />
-      </motion.div>
-    </div>
-  );
-}
-function Trypanosome() {
-  // An elongated, ribbon-like parasite with an undulating membrane and
-  // a trailing flagellum — the shape is redrawn continuously to create
-  // a swimming/undulating motion, distinct from the round bacteria/virus.
-  return (
-    <svg viewBox="0 0 200 60" className="h-full w-full opacity-[0.15]" overflow="visible">
-      <motion.path
-        stroke="#146349"
-        strokeWidth="7"
-        fill="none"
-        strokeLinecap="round"
-        animate={{
-          d: [
-            "M 10 30 Q 45 10, 80 30 T 150 30 Q 165 30, 180 22",
-            "M 10 30 Q 45 48, 80 30 T 150 30 Q 165 30, 180 38",
-            "M 10 30 Q 45 10, 80 30 T 150 30 Q 165 30, 180 22",
-          ],
-        }}
-        transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-      />
-      {/* nucleus, roughly mid-body */}
-      <circle cx="70" cy="30" r="5" fill="#0B2E23" opacity="0.5" />
-    </svg>
   );
 }

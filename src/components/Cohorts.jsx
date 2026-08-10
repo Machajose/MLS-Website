@@ -1,32 +1,19 @@
 import Reveal from "./Reveal";
+import AmbientField from "./AmbientField";
 
 const COHORTS = [
-  {
-    year: "Year 1",
-    title: "Foundations",
-    desc: "Settling into lab basics — safety protocols, specimen handling, and first exposure to the discipline through MUTMLSA's peer mentorship.",
-  },
-  {
-    year: "Year 2",
-    title: "Building the bench",
-    desc: "Deeper into core units like haematology and microbiology, with MUTMLSA workshops running alongside coursework to reinforce technique.",
-  },
-  {
-    year: "Year 3",
-    title: "Specialising",
-    desc: "Coursework narrows toward specific disciplines — clinical chemistry, histopathology — with MUTMLSA connecting members to research opportunities.",
-  },
-  {
-    year: "Year 4",
-    title: "Bridge to practice",
-    desc: "Attachments, final-year projects, and the transition toward certification — MUTMLSA's alumni network and career talks matter most here.",
-  },
+  { year: "Year 1", title: "Foundations", desc: "Settling into lab basics — safety protocols, specimen handling, and first exposure to the discipline through MUTMLSA's peer mentorship." },
+  { year: "Year 2", title: "Building the bench", desc: "Deeper into core units like haematology and microbiology, with MUTMLSA workshops running alongside coursework to reinforce technique." },
+  { year: "Year 3", title: "Specialising", desc: "Coursework narrows toward specific disciplines — clinical chemistry, histopathology — with MUTMLSA connecting members to research opportunities." },
+  { year: "Year 4", title: "Bridge to practice", desc: "Attachments, final-year projects, and the transition toward certification — MUTMLSA's alumni network and career talks matter most here." },
 ];
 
 export default function Cohorts() {
   return (
-    <section id="cohorts" className="border-t border-ink/10 py-20 dark:border-dark-border md:py-28">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+    <section id="cohorts" className="relative overflow-hidden border-t border-ink/10 py-20 dark:border-dark-border md:py-28">
+      <AmbientField redCells={2} whiteCells={1} />
+
+      <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <span className="label-tag text-lab-700 dark:text-lab-500">Every stage</span>
         <h2 className="mt-3 font-display text-3xl font-semibold text-lab-900 md:text-4xl dark:text-dark-ink">
           From Year 1 to Year 4

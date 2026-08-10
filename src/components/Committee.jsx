@@ -6,6 +6,8 @@ import viceChairperson from "../assets/committee/brianlore.jpeg";
 import viceSecretary from "../assets/committee/Shariff.jpeg";
 import secretaryGeneral from "../assets/committee/Antonia.png";
 import sargentAtArm from "../assets/committee/Joseph.jpg";
+import thirdYearRepresentative from "../assets/committee/Anna.jpeg";
+import publicRelationsOfficer from "../assets/committee/parapanda.jpeg";
 
 // Import each confirmed photo as it comes in, e.g.:
 // import japhethPhoto from "../assets/committee/japheth.jpg";
@@ -15,12 +17,13 @@ const MEMBERS = [
   { role: "Vice Chairperson", name: "Brian Lore", initials: "VC", photo: viceChairperson },
   { role: "Secretary General", name: "Antonia Muthoni", initials: "SG", photo: secretaryGeneral },
   { role: "Vice Secretary", name: "Shariff", initials: "VS", photo: viceSecretary },
-  { role: "Treasurer", name: "To be announced", initials: "TR", photo: null },
+  { role: "Treasurer", name: "James", initials: "TR", photo: null },
   { role: "Organizing Secretary", name: "Japheth", initials: "OS", photo: organizingSecretary },
   { role: "Sargent-At-Arm", name: "Joseph Macharia", initials: "SA", photo: sargentAtArm },
-  { role: "Public Relations Officer", name: "To be announced", initials: "PR", photo: null },
-  { role: "Representative", name: "To be announced", initials: "RP", photo: null },
-  { role: "Director of the Board", name: "To be announced", initials: "DB", photo: null },
+  { role: "Public Relations Officer", name: "Juluis Kimani", initials: "PR", photo: publicRelationsOfficer },
+  { role: "3rd Year Representative", name: "Anna Keddy", initials: "REP", photo: thirdYearRepresentative },
+  { role: "2nd Year Representative", name: "Sharon", initials: "REP", photo: null },
+  { role: "1st Year Representative", name: "To be announced", initials: "REP", photo: null },
 ];
 
 export default function Committee() {
@@ -32,8 +35,9 @@ export default function Committee() {
           Executive committee
         </h2>
         <p className="mt-3 max-w-md text-ink-soft dark:text-dark-ink-soft">
-          Placeholder roster — swap in names, portraits, and contacts once
-          this year's board is confirmed.
+          <p className="mt-3 max-w-md text-ink-soft dark:text-dark-ink-soft">
+  Meet the board steering MUTMLSA this year.
+</p>
         </p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

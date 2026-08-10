@@ -1,9 +1,9 @@
 import { motion, useMotionValue, useTransform, useSpring } from "motion/react";
+import { RedCell, WhiteCell } from "./creatures";
 
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-14 pb-20 md:pt-20 md:pb-28">
-      {/* ambient grid, like graph/lab paper */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
         style={{
@@ -23,9 +23,7 @@ export default function Hero() {
           <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight text-lab-900 md:text-6xl dark:text-dark-ink">
             The bedrock of
             <br />
-            <span className="text-coral-600">modern medicine.
-
-            </span>
+            <span className="text-coral-600">modern medicine.</span>
           </h1>
 
           <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft dark:text-dark-ink-soft">
@@ -43,8 +41,7 @@ export default function Hero() {
               Become a member
             </a>
             
-              <a
-              href="#about"
+              <a href="#about"
               className="label-tag border-b border-ink/30 pb-1 text-ink-soft transition-colors hover:border-lab-700 hover:text-lab-800 dark:text-dark-ink-soft"
             >
               Read the report ↓
@@ -75,7 +72,6 @@ export default function Hero() {
               <span className="label-tag text-coral-500">MUTMLSA LAB</span>
             </div>
           </div>
-          {/* tape corner accent */}
           <div className="absolute -top-3 left-8 h-6 w-16 -rotate-3 bg-lab-100/80" />
         </div>
       </div>
@@ -119,47 +115,26 @@ function DriftingCells() {
     mouseY.set(y);
   }
 
+  // RBCs stay smaller (~22-40px), matching real biology relative to WBCs.
   const redCells = [
-    { size: 46, duration: 26, depth: 0.6, path: [
-      { top: "8%", left: "-4%" }, { top: "18%", left: "30%" }, { top: "6%", left: "60%" }, { top: "20%", left: "104%" },
-    ]},
-    { size: 58, duration: 32, depth: 0.9, path: [
-      { top: "72%", left: "-6%" }, { top: "60%", left: "25%" }, { top: "78%", left: "55%" }, { top: "64%", left: "104%" },
-    ]},
-    { size: 50, duration: 29, depth: 0.75, path: [
-      { top: "14%", left: "104%" }, { top: "26%", left: "70%" }, { top: "10%", left: "40%" }, { top: "22%", left: "-6%" },
-    ]},
-    { size: 38, duration: 24, depth: 0.5, path: [
-      { top: "82%", left: "104%" }, { top: "70%", left: "65%" }, { top: "86%", left: "35%" }, { top: "74%", left: "-4%" },
-    ]},
-    { size: 30, duration: 20, depth: 0.4, path: [
-      { top: "50%", left: "-6%" }, { top: "40%", left: "35%" }, { top: "56%", left: "70%" }, { top: "44%", left: "104%" },
-    ]},
-    { size: 34, duration: 27, depth: 0.55, path: [
-      { top: "34%", left: "104%" }, { top: "44%", left: "80%" }, { top: "30%", left: "50%" }, { top: "38%", left: "-6%" },
-    ]},
-    { size: 42, duration: 23, depth: 0.65, path: [
-      { top: "92%", left: "-6%" }, { top: "84%", left: "20%" }, { top: "96%", left: "48%" }, { top: "88%", left: "104%" },
-    ]},
-    { size: 26, duration: 19, depth: 0.35, path: [
-      { top: "4%", left: "104%" }, { top: "12%", left: "78%" }, { top: "2%", left: "48%" }, { top: "10%", left: "-6%" },
-    ]},
+    { size: 30, duration: 26, depth: 0.6, path: [{ top: "8%", left: "-4%" }, { top: "18%", left: "30%" }, { top: "6%", left: "60%" }, { top: "20%", left: "104%" }] },
+    { size: 38, duration: 32, depth: 0.9, path: [{ top: "72%", left: "-6%" }, { top: "60%", left: "25%" }, { top: "78%", left: "55%" }, { top: "64%", left: "104%" }] },
+    { size: 34, duration: 29, depth: 0.75, path: [{ top: "14%", left: "104%" }, { top: "26%", left: "70%" }, { top: "10%", left: "40%" }, { top: "22%", left: "-6%" }] },
+    { size: 26, duration: 24, depth: 0.5, path: [{ top: "82%", left: "104%" }, { top: "70%", left: "65%" }, { top: "86%", left: "35%" }, { top: "74%", left: "-4%" }] },
+    { size: 22, duration: 20, depth: 0.4, path: [{ top: "50%", left: "-6%" }, { top: "40%", left: "35%" }, { top: "56%", left: "70%" }, { top: "44%", left: "104%" }] },
+    { size: 24, duration: 27, depth: 0.55, path: [{ top: "34%", left: "104%" }, { top: "44%", left: "80%" }, { top: "30%", left: "50%" }, { top: "38%", left: "-6%" }] },
+    { size: 28, duration: 23, depth: 0.65, path: [{ top: "92%", left: "-6%" }, { top: "84%", left: "20%" }, { top: "96%", left: "48%" }, { top: "88%", left: "104%" }] },
+    { size: 20, duration: 19, depth: 0.35, path: [{ top: "4%", left: "104%" }, { top: "12%", left: "78%" }, { top: "2%", left: "48%" }, { top: "10%", left: "-6%" }] },
   ];
 
+  // WBCs stay larger (~44-64px), matching real biology.
   const whiteCells = [
-    { size: 44, duration: 34, depth: 0.85, path: [
-      { top: "40%", left: "104%" }, { top: "32%", left: "60%" }, { top: "46%", left: "20%" }, { top: "36%", left: "-6%" },
-    ]},
-    { size: 48, duration: 38, depth: 1, path: [
-      { top: "90%", left: "-6%" }, { top: "80%", left: "40%" }, { top: "94%", left: "75%" }, { top: "84%", left: "104%" },
-    ]},
+    { size: 52, duration: 34, depth: 0.85, path: [{ top: "40%", left: "104%" }, { top: "32%", left: "60%" }, { top: "46%", left: "20%" }, { top: "36%", left: "-6%" }] },
+    { size: 60, duration: 38, depth: 1, path: [{ top: "90%", left: "-6%" }, { top: "80%", left: "40%" }, { top: "94%", left: "75%" }, { top: "84%", left: "104%" }] },
   ];
 
   return (
-    <div
-      className="pointer-events-auto absolute inset-0 overflow-hidden"
-      onPointerMove={handlePointerMove}
-    >
+    <div className="pointer-events-auto absolute inset-0 overflow-hidden" onPointerMove={handlePointerMove}>
       {redCells.map((c, i) => (
         <FlowingCell key={`r-${i}`} cell={c} mouseX={mouseX} mouseY={mouseY}>
           <RedCell blur={c.depth < 0.6} />
@@ -189,46 +164,9 @@ function FlowingCell({ cell, mouseX, mouseY, children }) {
         left: cell.path.map((p) => p.left),
         scale: [1, 1.05, 1, 1.05, 1],
       }}
-      transition={{
-        duration: cell.duration,
-        repeat: Infinity,
-        ease: "linear",
-        times: [0, 0.33, 0.66, 1],
-      }}
+      transition={{ duration: cell.duration, repeat: Infinity, ease: "linear", times: [0, 0.33, 0.66, 1] }}
     >
       {children}
     </motion.div>
-  );
-}
-
-function RedCell({ blur = false }) {
-  return (
-    <svg
-      viewBox="0 0 100 100"
-      className="h-full w-full opacity-25"
-      style={blur ? { filter: "blur(1px)" } : undefined}
-    >
-      <defs>
-        <radialGradient id="rbc-edge" cx="50%" cy="50%" r="50%">
-          <stop offset="55%" stopColor="#E8593F" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="#D8492F" stopOpacity="0.55" />
-        </radialGradient>
-      </defs>
-      <circle cx="50" cy="50" r="46" fill="url(#rbc-edge)" />
-      <ellipse cx="50" cy="50" rx="20" ry="16" fill="#F6F4EC" opacity="0.28" />
-    </svg>
-  );
-}
-
-function WhiteCell() {
-  return (
-    <svg viewBox="0 0 100 100" className="h-full w-full opacity-20">
-      <circle cx="50" cy="50" r="46" fill="#EFF6F1" opacity="0.5" />
-      <path
-        d="M40 32 C55 28, 68 36, 66 48 C72 54, 68 66, 56 68 C48 74, 34 70, 32 58 C24 54, 28 40, 40 32 Z"
-        fill="#146349"
-        opacity="0.85"
-      />
-    </svg>
   );
 }
