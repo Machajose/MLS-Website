@@ -135,8 +135,8 @@ const MOMENTS_BY_PERIOD = [
     academicYear: "2024/2025",
     semester: "Sem 1",
     events: [
-      { caption: "Blood Film Morphology Workshop", type: "placeholder" },
-      { caption: "Kenol Market Screening Camp", type: "placeholder" },
+      { caption: "Soon to be Uploaded..", type: "placeholder" },
+      { caption: "Soon to be uploaded..", type: "placeholder" },
     ],
   },
   {
@@ -155,7 +155,7 @@ const MOMENTS_BY_PERIOD = [
     academicYear: "2023/2024",
     semester: "Sem 1",
     events: [
-      { caption: "Board Induction", type: "placeholder" },
+      { caption: "Soon to be uploaded..", type: "placeholder" },
     ],
   },
 ];
