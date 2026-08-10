@@ -1,60 +1,65 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-import kemelsa1 from "../assets/moments/kemelsa.jpeg";
-import kemelsa2 from "../assets/moments/kemelsa 2.jpeg";
-import kemelsa3 from "../assets/moments/kemelsa 3.jpeg";
-import kemelsa4 from "../assets/moments/kemelsa 4.jpeg";
-import kemelsa5 from "../assets/moments/kemelsa 5.jpeg";
-import kemelsa6 from "../assets/moments/kemelsa 6.jpeg";
-import kemelsa7 from "../assets/moments/kemelsa 7.jpeg";
-import kemelsa8 from "../assets/moments/kemelsa 8.jpeg";
+import kemelsa1 from "../assets/moments/2025-2026/sem 2/kemelsa/01.jpeg";
+import kemelsa2 from "../assets/moments/2025-2026/sem 2/kemelsa/02.jpeg";
+import kemelsa3 from "../assets/moments/2025-2026/sem 2/kemelsa/03.jpeg";
+import kemelsa4 from "../assets/moments/2025-2026/sem 2/kemelsa/04.jpeg";
+import kemelsa5 from "../assets/moments/2025-2026/sem 2/kemelsa/05.jpeg";
+import kemelsa6 from "../assets/moments/2025-2026/sem 2/kemelsa/06.jpeg";
+import kemelsa7 from "../assets/moments/2025-2026/sem 2/kemelsa/07.jpeg";
+import kemelsa8 from "../assets/moments/2025-2026/sem 2/kemelsa/08.jpeg";
+import kemelsa9 from "../assets/moments/2025-2026/sem 2/kemelsa/09.jpeg";
+import kemelsa10 from "../assets/moments/2025-2026/sem 2/kemelsa/010.jpeg";
+import kemelsa11 from "../assets/moments/2025-2026/sem 2/kemelsa/011.jpeg";
+import kemelsa12 from "../assets/moments/2025-2026/sem 2/kemelsa/012.jpeg";
 
-import symposium1 from "../assets/moments/Symposium1.jpeg";
-import symposium2 from "../assets/moments/Symposium2.jpeg";
-import symposium3 from "../assets/moments/Symposium3.jpeg";
-import symposium4 from "../assets/moments/Symposium4.jpeg";
-import symposium5 from "../assets/moments/Symposium5.jpeg";
-import symposium6 from "../assets/moments/symposium 6.jpeg";
-import symposium7 from "../assets/moments/symposium 7.jpeg";
-import symposium8 from "../assets/moments/symposium 8.jpeg";
+import symposium1 from "../assets/moments/2025-2026/sem 2/symposium/01.jpeg";
+import symposium2 from "../assets/moments/2025-2026/sem 2/symposium/02.jpeg";
+import symposium3 from "../assets/moments/2025-2026/sem 2/symposium/03.jpeg";
+import symposium4 from "../assets/moments/2025-2026/sem 2/symposium/04.jpeg";
+import symposium5 from "../assets/moments/2025-2026/sem 2/symposium/05.jpeg";
+import symposium6 from "../assets/moments/2025-2026/sem 2/symposium/06.jpeg";
+import symposium7 from "../assets/moments/2025-2026/sem 2/symposium/07.jpeg";
+import symposium8 from "../assets/moments/2025-2026/sem 2/symposium/08.jpeg";
 
-import bloodDrive1 from "../assets/moments/blood-drive-1.jpeg";
-import bloodDrive2 from "../assets/moments/blood-drive-2.jpeg";
-import bloodDrive3 from "../assets/moments/blood-drive-3.jpeg";
-import bloodDrive from "../assets/moments/blood-drive.jpeg";
+import bloodDrive1 from "../assets/moments/2025-2026/sem 1/blood drive/01.jpeg";
+import bloodDrive2 from "../assets/moments/2025-2026/sem 1/blood drive/02.jpeg";
+import bloodDrive3 from "../assets/moments/2025-2026/sem 1/blood drive/03.jpeg";
+import bloodDrive from "../assets/moments/2025-2026/sem 1/blood drive/04.jpeg";
 
-import handover1 from "../assets/moments/handover-1.jpeg";
-import handover from "../assets/moments/handover.jpeg";
-import handover3 from "../assets/moments/handover-3.jpeg";
-import handover6 from "../assets/moments/handover-6.jpeg";
-import handover7 from "../assets/moments/handover-7.jpeg";
-import handover8 from "../assets/moments/handover-8.jpeg";
+import handoverEsipila1 from "../assets/moments/2025-2026/sem 2/handover/01.jpeg";
+import handoverEsipila2 from "../assets/moments/2025-2026/sem 2/handover/02.jpeg";
+import handoverEsipila3 from "../assets/moments/2025-2026/sem 2/handover/03.jpeg";
+import handoverEsipila4 from "../assets/moments/2025-2026/sem 2/handover/04.jpeg";
+import handoverEsipila5 from "../assets/moments/2025-2026/sem 2/handover/05.jpeg";
+import handoverEsipila6 from "../assets/moments/2025-2026/sem 2/handover/06.jpeg";
+import handoverEsipila7 from "../assets/moments/2025-2026/sem 2/handover/07.jpeg";
 
-import handoverZandria from "../assets/moments/handoverZandria.jpeg";
-import handoverZandria2 from "../assets/moments/handoverZandria2.jpeg";
-import handoverZandria3 from "../assets/moments/handoverZandria3.jpeg";
-import handoverZandria4 from "../assets/moments/handoverZandria4.jpeg";
-import handoverZandria5 from "../assets/moments/handoverZandria5.jpeg";
-import handoverZandria6 from "../assets/moments/handoverZandria6.jpeg";
-import handoverZandria7 from "../assets/moments/handoverZandria7.jpeg";
+import handoverZandria from "../assets/moments/2024-2025/sem 2/handover/01.jpeg";
+import handoverZandria2 from "../assets/moments/2024-2025/sem 2/handover/02.jpeg";
+import handoverZandria3 from "../assets/moments/2024-2025/sem 2/handover/03.jpeg";
+import handoverZandria4 from "../assets/moments/2024-2025/sem 2/handover/04.jpeg";
+import handoverZandria5 from "../assets/moments/2024-2025/sem 2/handover/05.jpeg";
+import handoverZandria6 from "../assets/moments/2024-2025/sem 2/handover/06.jpeg";
+import handoverZandria7 from "../assets/moments/2024-2025/sem 2/handover/07.jpeg";
 
-import handoverAlvin from "../assets/moments/handoverALvin.jpeg";
-import handoverAlvin1 from "../assets/moments/handoverAlvin1.jpeg";
-import handoverAlvin2 from "../assets/moments/handoverAlvin2.jpeg";
-import handoverAlvin3 from "../assets/moments/handoverAlvin3.jpeg";
-
-
-import professionalExchange from "../assets/moments/professional-exchange-jkuat.jpeg";
-import professionalExchange1 from "../assets/moments/professional-exchange-jkuat 1.jpeg";
-import professionalExchange2 from "../assets/moments/professional-exchange-jkuat 2.jpeg";
-
-import kemelsaElections from "../assets/moments/kemelsa-elections.jpg";
-import kemelsaElections1 from "../assets/moments/kemelsa-elections-1.jpg";
-import kemelsaElections2 from "../assets/moments/kemelsa-elections-2.jpg";
+import handoverAlvin from "../assets/moments/2023-2024/sem 2/handover/01.jpeg";
+import handoverAlvin1 from "../assets/moments/2023-2024/sem 2/handover/02.jpeg";
+import handoverAlvin2 from "../assets/moments/2023-2024/sem 2/handover/03.jpeg";
+import handoverAlvin3 from "../assets/moments/2023-2024/sem 2/handover/04.jpeg";
 
 
-import gameNightVideo from "../assets/moments/game-night-video.mp4";
+import professionalExchange from "../assets/moments/2024-2025/sem 2/JKUAT-professional-exchange/01.jpeg";
+import professionalExchange1 from "../assets/moments/2024-2025/sem 2/JKUAT-professional-exchange/02.jpeg";
+import professionalExchange2 from "../assets/moments/2024-2025/sem 2/JKUAT-professional-exchange/03.jpeg";
+
+import kemelsaElections from "../assets/moments/2024-2025/sem 2/kemelsa-elections/01.jpg";
+import kemelsaElections1 from "../assets/moments/2024-2025/sem 2/kemelsa-elections/02.jpg";
+import kemelsaElections2 from "../assets/moments/2024-2025/sem 2/kemelsa-elections/03.jpg";
+
+
+import gameNightVideo from "../assets/moments/2025-2026/sem 2/game-night/game-night video.mp4";
 
 // Grouped by academic year (since semesters span two calendar years),
 // then by semester, then individual events. Most recent first — add
@@ -69,13 +74,13 @@ const MOMENTS_BY_PERIOD = [
         caption: "Handover Ceremony",
         tagline: "New board, same chaos, better spirit",
         type: "slideshow",
-        photos: [handover1, handover , handover3, handover6, handover7, handover8],
+        photos: [handoverEsipila2, handoverEsipila4, handoverEsipila5, handoverEsipila1, handoverEsipila3, handoverEsipila6],
       },
       {
         caption: "MUTMLSA at KeMELSA Scientific Conference",
         tagline: "Where we pretended to understand everyone's research",
         type: "slideshow",
-        photos: [kemelsa8, kemelsa1, kemelsa2, kemelsa3, kemelsa4, kemelsa5, kemelsa6, kemelsa7],
+        photos: [kemelsa9, kemelsa1, kemelsa2, kemelsa3, kemelsa4, kemelsa5, kemelsa10, kemelsa6, kemelsa7],
       },
       {
         caption: "Club Symposium",

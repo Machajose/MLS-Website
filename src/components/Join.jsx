@@ -20,13 +20,13 @@ export default function Join() {
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               
-                <a href="mailto:machajse608@gmail.com"
+                <a href="mailto:mutmedicallab@gmail.com"
                 className="rounded-sm border border-paper/25 px-5 py-2.5 text-center text-sm font-semibold text-paper transition-colors hover:bg-paper/10"
               >
                 Email the committee
               </a>
               
-                <a href="https://wa.me/254114655750"
+                <a href="https://wa.me/254112003231"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-sm border border-paper/25 px-5 py-2.5 text-center text-sm font-semibold text-paper transition-colors hover:bg-paper/10"

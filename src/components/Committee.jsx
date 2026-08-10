@@ -18,7 +18,7 @@ const MEMBERS = [
   { role: "Secretary General", name: "Antonia Muthoni", initials: "SG", photo: secretaryGeneral },
   { role: "Vice Secretary", name: "Shariff", initials: "VS", photo: viceSecretary },
   { role: "Treasurer", name: "James", initials: "TR", photo: null },
-  { role: "Organizing Secretary", name: "Japheth", initials: "OS", photo: organizingSecretary },
+  { role: "Organizing Secretary", name: "Japheth Mambo", initials: "OS", photo: organizingSecretary },
   { role: "Sargent-At-Arm", name: "Joseph Macharia", initials: "SA", photo: sargentAtArm },
   { role: "Public Relations Officer", name: "Juluis Kimani", initials: "PR", photo: publicRelationsOfficer },
   { role: "3rd Year Representative", name: "Anna Keddy", initials: "REP", photo: thirdYearRepresentative },
