@@ -4,7 +4,7 @@ import chairperson from "../assets/committee/Cherrily.jpeg";
 import organizingSecretary from "../assets/committee/Japheth.jpeg";
 import viceChairperson from "../assets/committee/brianlore.jpeg";
 import viceSecretary from "../assets/committee/Shariff.jpeg";
-import secretaryGeneral from "../assets/committee/Antonia.png";
+import secretaryGeneral from "../assets/committee/Tonia.jpeg";
 import sargentAtArm from "../assets/committee/Joseph.jpg";
 import thirdYearRepresentative from "../assets/committee/Anna.jpeg";
 import publicRelationsOfficer from "../assets/committee/parapanda.jpeg";
