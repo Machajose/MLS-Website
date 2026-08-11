@@ -5,12 +5,12 @@ import chairPerson from "../assets/committee/Cherrily.jpeg";
 import viceChairperson from "../assets/committee/brianlore.jpeg";
 import secretaryGeneral from "../assets/committee/Tonia.jpeg";
 import viceSecretary from "../assets/committee/Shariff.jpeg";
-//import treasurer from "../assets/committee/treasurer.jpeg";
+import treasurer from "../assets/committee/James.jpeg";
 import organizingSecretary from "../assets/committee/Japheth.jpeg";
 import sargentAtArm from "../assets/committee/Joseph.jpg";
 import publicRelationsOfficer from "../assets/committee/parapanda.jpeg";
 import thirdYearRepresentative from "../assets/committee/Anna.jpeg";
-//import secondYearRepresentative from "../assets/committee/Sharon.jpeg";
+import secondYearRepresentative from "../assets/committee/Sharon.jpeg";
 //import firstYearRepresentative from "../assets/committee/.jpeg";
 
 const MEMBERS = [
@@ -18,12 +18,12 @@ const MEMBERS = [
   { role: "Vice Chairperson", name: "Brian Lore", initials: "VC", photo: viceChairperson },
   { role: "Secretary General", name: "Antonia Muthoni", initials: "SG", photo: secretaryGeneral },
   { role: "Vice Secretary", name: "Kelvin Masha", initials: "VS", photo: viceSecretary },
-  { role: "Treasurer", name: "James", initials: "TR", photo: null },
+  { role: "Treasurer", name: "James Mwangi", initials: "TR", photo: treasurer },
   { role: "Organizing Secretary", name: "Japheth Mambo", initials: "OS", photo: organizingSecretary },
   { role: "Sargent-At-Arm", name: "Joseph Macharia", initials: "SA", photo: sargentAtArm },
   { role: "Public Relations Officer", name: "Julius Kimani", initials: "PR", photo: publicRelationsOfficer },
   { role: "Third Year Representative", name: "Anna Keddy", initials: "REP", photo: thirdYearRepresentative },
-  { role: "Second Year Representative", name: "Sharon Akinyi", initials: "REP", photo: null },
+  { role: "Second Year Representative", name: "Sharon Akinyi", initials: "REP", photo: secondYearRepresentative },
   { role: "First Year Representative", name: "To be announced", initials: "REP", photo: null },
 ];
 

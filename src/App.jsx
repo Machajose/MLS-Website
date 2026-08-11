@@ -12,11 +12,17 @@ import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import useDarkMode from "./hooks/useDarkMode";
 import ChatWidget from "./components/ChatWidget";
+import AdminPortal from "./components/AdminPortal";
 
 export default function App() {
   const [dark, setDark] = useDarkMode();
 
+  if (window.location.pathname === "/admin") {
+    return <AdminPortal />;
+  }
+
   return (
+    
     <div className="min-h-screen bg-paper text-ink dark:bg-dark-bg dark:text-dark-ink">
       <TopBar />
       <Navbar dark={dark} setDark={setDark} />
