@@ -19,7 +19,7 @@ const MEMBERS = [
   { role: "Vice Chairperson", name: "Brian Lore", initials: "VC", photo: viceChairperson },
   { role: "Secretary General", name: "Antonia Muthoni", initials: "SG", photo: secretaryGeneral },
   { role: "Vice Secretary", name: "Kelvin Masha", initials: "VS", photo: viceSecretary },
-  { role: "Treasurer", name: "James Mwangi", initials: "TR", photo: treasurer },
+  { role: "Treasurer", name: "James Gitahi", initials: "TR", photo: treasurer },
   { role: "Organizing Secretary", name: "Japheth Mambo", initials: "OS", photo: organizingSecretary },
   { role: "Sargent-At-Arm", name: "Joseph Macharia", initials: "SA", photo: sargentAtArm },
   { role: "Public Relations Officer", name: "Julius Kimani", initials: "PR", photo: publicRelationsOfficer },
