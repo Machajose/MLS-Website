@@ -23,7 +23,7 @@ const MEMBERS = [
   { role: "Sargent-At-Arm", name: "Joseph Macharia", initials: "SA", photo: sargentAtArm },
   { role: "Public Relations Officer", name: "Julius Kimani", initials: "PR", photo: publicRelationsOfficer },
   { role: "Third Year Representative", name: "Anna Keddy", initials: "REP", photo: thirdYearRepresentative },
-  { role: "Second Year Representative", name: "Sharon Mwangi", initials: "REP", photo: null },
+  { role: "Second Year Representative", name: "Sharon Akinyi", initials: "REP", photo: null },
   { role: "First Year Representative", name: "To be announced", initials: "REP", photo: null },
 ];
 
