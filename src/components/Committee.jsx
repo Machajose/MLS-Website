@@ -9,6 +9,7 @@ import treasurer from "../assets/committee/James.jpeg";
 import organizingSecretary from "../assets/committee/Japheth.jpeg";
 import sargentAtArm from "../assets/committee/Joseph.jpg";
 import publicRelationsOfficer from "../assets/committee/parapanda.jpeg";
+import fourthYearRepresentative from "../assets/committee/Ibrahim.jpeg";
 import thirdYearRepresentative from "../assets/committee/Anna.jpeg";
 import secondYearRepresentative from "../assets/committee/Sharon.jpeg";
 //import firstYearRepresentative from "../assets/committee/.jpeg";
@@ -22,9 +23,10 @@ const MEMBERS = [
   { role: "Organizing Secretary", name: "Japheth Mambo", initials: "OS", photo: organizingSecretary },
   { role: "Sargent-At-Arm", name: "Joseph Macharia", initials: "SA", photo: sargentAtArm },
   { role: "Public Relations Officer", name: "Julius Kimani", initials: "PR", photo: publicRelationsOfficer },
-  { role: "Third Year Representative", name: "Anna Keddy", initials: "REP", photo: thirdYearRepresentative },
-  { role: "Second Year Representative", name: "Sharon Akinyi", initials: "REP", photo: secondYearRepresentative },
-  { role: "First Year Representative", name: "To be announced", initials: "REP", photo: null },
+  {role:  "Fourth Year Representative", name: "Ibrahim Mbugua", initials: "4th Yr Rep", photo: fourthYearRepresentative},
+  { role: "Third Year Representative", name: "Anna Keddy", initials: " 3rd Yr Rep", photo: thirdYearRepresentative },
+  { role: "Second Year Representative", name: "Sharon Akinyi", initials: " 2nd Yr Rep", photo: secondYearRepresentative },
+  { role: "First Year Representative", name: "To be announced", initials: " 1st Yr Rep", photo: null },
 ];
 
 export default function Committee() {
