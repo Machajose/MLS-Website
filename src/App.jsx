@@ -11,6 +11,7 @@ import Join from "./components/Join";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import useDarkMode from "./hooks/useDarkMode";
+import ChatWidget from "./components/ChatWidget";
 
 export default function App() {
   const [dark, setDark] = useDarkMode();
@@ -38,6 +39,7 @@ export default function App() {
         </Reveal>
       </main>
       <Footer />
-    </div>
+<ChatWidget />
+</div>
   );
 }
