@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import AmbientField from "./AmbientField";
+import TiltCard from "./TiltCard";
 
 const COHORTS = [
   { year: "Year 1", title: "Foundations", desc: "Settling into lab basics — safety protocols, specimen handling, and first exposure to the discipline through MUTMLSA's peer mentorship." },
@@ -26,7 +27,7 @@ export default function Cohorts() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {COHORTS.map((c, i) => (
             <Reveal key={c.year} delay={i * 0.1}>
-              <div className="rounded-sm border border-ink/10 bg-lab-50/50 p-6 dark:border-dark-border dark:bg-dark-surface/40">
+              <TiltCard className="rounded-sm border border-ink/10 bg-lab-50/50 p-6 dark:border-dark-border dark:bg-dark-surface/40">
                 <span className="label-tag rounded-sm bg-lab-900 px-2 py-1 text-lab-100 dark:bg-lab-600">
                   {c.year}
                 </span>
@@ -34,7 +35,7 @@ export default function Cohorts() {
                   {c.title}
                 </h3>
                 <p className="mt-2 text-sm text-ink-soft dark:text-dark-ink-soft">{c.desc}</p>
-              </div>
+              </TiltCard>
             </Reveal>
           ))}
         </div>

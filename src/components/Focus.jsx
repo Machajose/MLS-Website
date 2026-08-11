@@ -1,12 +1,13 @@
 import Reveal from "./Reveal";
 import AmbientField from "./AmbientField";
-
+import TiltCard from "./TiltCard";
+import scienceComplex from "../assets/committee/science-complex.jpeg";
 
 const ACTIVITIES = [
   {
     code: "01",
     title: "Weekly Meetings",
-     desc: "General meetings every Thursday, 5:00 PM — plans get made, concepts get debated, and there's usually a game or two before we wrap up."
+    desc: "General meetings every Thursday, 5:00 PM — plans get made, concepts get debated, and there's usually a game or two before we wrap up.",
   },
   {
     code: "02",
@@ -40,38 +41,50 @@ const DISCIPLINES = [
 
 export default function Focus() {
   return (
-    <section id="focus" className="relative overflow-hidden border-t border-ink/10 bg-lab-50 py-20 text-ink dark:border-dark-border dark:bg-dark-surface/40 md:py-28">
-
-      <AmbientField redCells={3} whiteCells={1} />
-
+    <section id="focus" className="relative overflow-hidden py-20 md:py-28">
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
-        <span className="label-tag text-lab-700 dark:text-lab-500">What we do</span>
-        <h2 className="mt-3 font-display text-3xl font-semibold text-lab-900 md:text-4xl dark:text-dark-ink">
-          Beyond the classroom
-        </h2>
-        <p className="mt-3 max-w-xl text-ink-soft dark:text-dark-ink-soft">
-          MUTMLSA is a rhythm of weekly meetings, occasional game nights,
-          and bigger moments like symposiums and outreach — with real
-          technical practice woven through all of it.
-        </p>
+        <div className="relative overflow-hidden">
+          <div className="absolute right-0 top-0 h-full w-full md:w-2/5">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${scienceComplex})` }}
+            />
+            <div className="absolute inset-0 bg-paper/85 dark:bg-dark-bg/90" />
+          </div>
+          <div className="absolute left-0 top-0 h-full w-full overflow-hidden md:w-3/5">
+            <AmbientField redCells={3} whiteCells={1} />
+          </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
-  {ACTIVITIES.map((a, i) => (
-    <Reveal key={a.code} delay={i * 0.08}>
-      <div className="group relative h-full flex flex-col rounded-sm border border-ink/10 bg-lab-50/50 p-6 transition-colors hover:border-lab-600/40 hover:bg-lab-50 dark:border-dark-border dark:bg-dark-surface/40 dark:hover:bg-dark-surface">
-                <div className="flex items-center justify-between">
-                  <span className="label-tag rounded-sm bg-lab-900 px-2 py-1 text-lab-100 dark:bg-lab-600">
-                    {a.code}
-                  </span>
-                  <span className="h-2 w-2 rounded-full bg-coral-500 opacity-0 transition-opacity group-hover:opacity-100" />
-                </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-lab-900 dark:text-dark-ink">
-                  {a.title}
-                </h3>
-                <p className="mt-2 text-ink-soft dark:text-dark-ink-soft">{a.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+          <div className="relative">
+            <span className="label-tag text-lab-700 dark:text-lab-500">What we do</span>
+            <h2 className="mt-3 font-display text-3xl font-semibold text-lab-900 md:text-4xl dark:text-dark-ink">
+              Beyond the classroom
+            </h2>
+            <p className="mt-3 max-w-xl text-ink-soft dark:text-dark-ink-soft">
+              MUTMLSA is a rhythm of weekly meetings, occasional game nights,
+              and bigger moments like symposiums and outreach — with real
+              technical practice woven through all of it.
+            </p>
+
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+              {ACTIVITIES.map((a, i) => (
+                <Reveal key={a.code} delay={i * 0.08}>
+                  <TiltCard className="group relative h-full flex flex-col rounded-sm border border-ink/10 bg-lab-50/50 p-6 transition-colors hover:border-lab-600/40 hover:bg-lab-50 dark:border-dark-border dark:bg-dark-surface/40 dark:hover:bg-dark-surface">
+                    <div className="flex items-center justify-between">
+                      <span className="label-tag rounded-sm bg-lab-900 px-2 py-1 text-lab-100 dark:bg-lab-600">
+                        {a.code}
+                      </span>
+                      <span className="h-2 w-2 rounded-full bg-coral-500 opacity-0 transition-opacity group-hover:opacity-100" />
+                    </div>
+                    <h3 className="mt-4 font-display text-xl font-semibold text-lab-900 dark:text-dark-ink">
+                      {a.title}
+                    </h3>
+                    <p className="mt-2 text-ink-soft dark:text-dark-ink-soft">{a.desc}</p>
+                  </TiltCard>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="mt-16 border-t border-ink/10 pt-10 dark:border-dark-border">
@@ -85,9 +98,9 @@ export default function Focus() {
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5 items-stretch">
-  {DISCIPLINES.map((d, i) => (
-    <Reveal key={d.code} delay={i * 0.06}>
-      <div className="h-full flex flex-col rounded-sm border border-ink/10 bg-lab-50/40 p-5 dark:border-dark-border dark:bg-dark-surface/30">
+            {DISCIPLINES.map((d, i) => (
+              <Reveal key={d.code} delay={i * 0.06}>
+                <TiltCard className="h-full flex flex-col rounded-sm border border-ink/10 bg-lab-50/40 p-5 dark:border-dark-border dark:bg-dark-surface/30">
                   <span className="label-tag rounded-sm bg-lab-900 px-2 py-1 text-lab-100 dark:bg-lab-600">
                     {d.code}
                   </span>
@@ -95,7 +108,7 @@ export default function Focus() {
                     {d.title}
                   </h4>
                   <p className="mt-1.5 text-sm text-ink-soft dark:text-dark-ink-soft">{d.desc}</p>
-                </div>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
