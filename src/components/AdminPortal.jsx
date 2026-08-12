@@ -2,6 +2,7 @@ import { useState } from "react";
 import { API_BASE_URL } from "../config/api";
 
 const CURRENT_PERIOD = { academicYear: "2026/2027", semester: "Sem 1" };
+const YEAR_ORDER = ["Y1", "Y2", "Y3", "Y4"];
 
 export default function AdminPortal() {
   const [password, setPassword] = useState("");
@@ -51,24 +52,24 @@ export default function AdminPortal() {
   }
 
   async function confirmApplication(app) {
-  if (confirmingId) return;
-  setConfirmingId(app.id);
-  try {
-    await authedFetch("/api/admin/members", {
-      method: "POST",
-      body: JSON.stringify({
-        fullName: app.full_name,
-        email: app.email,
-        phone: app.phone,
-        yearOfStudy: app.year_of_study,
-        applicationId: app.id,
-      }),
-    });
-    await loadData();
-  } finally {
-    setConfirmingId(null);
+    if (confirmingId) return;
+    setConfirmingId(app.id);
+    try {
+      await authedFetch("/api/admin/members", {
+        method: "POST",
+        body: JSON.stringify({
+          fullName: app.full_name,
+          email: app.email,
+          phone: app.phone,
+          yearOfStudy: app.year_of_study,
+          applicationId: app.id,
+        }),
+      });
+      await loadData();
+    } finally {
+      setConfirmingId(null);
+    }
   }
-}
 
   async function togglePayment(member) {
     await authedFetch(`/api/admin/members/${member.id}/payment`, {
@@ -120,6 +121,15 @@ export default function AdminPortal() {
 
   const filteredMembers = members.filter((m) =>
     m.full_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const groupedMembers = YEAR_ORDER.reduce((acc, year) => {
+    acc[year] = filteredMembers.filter((m) => m.year_of_study === year);
+    return acc;
+  }, {});
+
+  const otherMembers = filteredMembers.filter(
+    (m) => !YEAR_ORDER.includes(m.year_of_study)
   );
 
   return (
@@ -174,49 +184,83 @@ export default function AdminPortal() {
           placeholder="Search by name…"
           className="mt-3 w-full max-w-xs rounded-sm border border-ink/15 bg-transparent px-3 py-2 text-sm dark:border-dark-border dark:text-dark-ink"
         />
-        <div className="mt-3 space-y-2">
+
+        <div className="mt-3 space-y-6">
           {filteredMembers.length === 0 && (
             <p className="text-sm text-ink-soft dark:text-dark-ink-soft">No members match that search.</p>
           )}
-          {filteredMembers.map((m) => (
-            <div
-              key={m.id}
-              className="flex flex-col gap-2 rounded-sm border border-ink/10 p-3 dark:border-dark-border sm:flex-row sm:items-center sm:justify-between"
-            >
-              <div>
-                <p className="text-sm font-semibold text-lab-900 dark:text-dark-ink">{m.full_name}</p>
-                <p className="text-xs text-ink-soft dark:text-dark-ink-soft">
-                  {m.year_of_study || "Year unknown"}
-                </p>
-              </div>
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  onClick={() => toggleRegistration(m)}
-                  className={`rounded-sm px-3 py-1.5 text-xs font-semibold ${
-                    m.registration_paid
-                      ? "bg-lab-600 text-paper"
-                      : "border border-coral-500 text-coral-600"
-                  }`}
-                >
-                  {m.registration_paid ? "Registration ✓" : "Registration unpaid"}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => togglePayment(m)}
-                  className={`rounded-sm px-3 py-1.5 text-xs font-semibold ${
-                    m.paidThisPeriod
-                      ? "bg-lab-600 text-paper"
-                      : "border border-coral-500 text-coral-600"
-                  }`}
-                >
-                  {m.paidThisPeriod ? "Semester Paid ✓" : "Mark semester paid"}
-                </button>
-              </div>
-            </div>
-          ))}
+
+          {YEAR_ORDER.map((year) =>
+            groupedMembers[year].length > 0 ? (
+              <MemberYearGroup
+                key={year}
+                label={year}
+                members={groupedMembers[year]}
+                onToggleRegistration={toggleRegistration}
+                onTogglePayment={togglePayment}
+              />
+            ) : null
+          )}
+
+          {otherMembers.length > 0 && (
+            <MemberYearGroup
+              label="Other / Unspecified"
+              members={otherMembers}
+              onToggleRegistration={toggleRegistration}
+              onTogglePayment={togglePayment}
+            />
+          )}
         </div>
       </section>
+    </div>
+  );
+}
+
+function MemberYearGroup({ label, members, onToggleRegistration, onTogglePayment }) {
+  return (
+    <div>
+      <h3 className="label-tag mb-2 text-lab-700 dark:text-lab-500">
+        {label} ({members.length})
+      </h3>
+      <div className="space-y-2">
+        {members.map((m) => (
+          <div
+            key={m.id}
+            className="flex flex-col gap-2 rounded-sm border border-ink/10 p-3 dark:border-dark-border sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <p className="text-sm font-semibold text-lab-900 dark:text-dark-ink">{m.full_name}</p>
+              <p className="text-xs text-ink-soft dark:text-dark-ink-soft">
+                {m.year_of_study || "Year unknown"}
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={() => onToggleRegistration(m)}
+                className={`rounded-sm px-3 py-1.5 text-xs font-semibold ${
+                  m.registration_paid
+                    ? "bg-lab-600 text-paper"
+                    : "border border-coral-500 text-coral-600"
+                }`}
+              >
+                {m.registration_paid ? "Registration ✓" : "Registration unpaid"}
+              </button>
+              <button
+                type="button"
+                onClick={() => onTogglePayment(m)}
+                className={`rounded-sm px-3 py-1.5 text-xs font-semibold ${
+                  m.paidThisPeriod
+                    ? "bg-lab-600 text-paper"
+                    : "border border-coral-500 text-coral-600"
+                }`}
+              >
+                {m.paidThisPeriod ? "Semester Paid ✓" : "Mark semester paid"}
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

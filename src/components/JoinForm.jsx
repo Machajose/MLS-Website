@@ -11,7 +11,6 @@ const initialForm = {
 
 export default function JoinForm() {
   const [form, setForm] = useState(initialForm);
-  // status: "idle" | "submitting" | "success" | "error"
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -71,7 +70,7 @@ export default function JoinForm() {
         <Field label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Year of study" name="yearOfStudy" value={form.yearOfStudy} onChange={handleChange} placeholder="e.g. Y2" />
+        <YearSelect value={form.yearOfStudy} onChange={handleChange} />
         <Field label="Phone (optional)" name="phone" value={form.phone} onChange={handleChange} />
       </div>
       <div>
@@ -120,6 +119,32 @@ function Field({ label, name, type = "text", value, onChange, required, placehol
         placeholder={placeholder}
         className="w-full rounded-sm border border-paper/20 bg-paper/5 px-3 py-2 text-sm text-paper placeholder:text-paper/30 focus:border-lab-500 focus:outline-none"
       />
+    </div>
+  );
+}
+
+function YearSelect({ value, onChange }) {
+  return (
+    <div>
+      <label className="label-tag mb-1.5 block text-paper/70" htmlFor="yearOfStudy">
+        Year of study
+      </label>
+      <select
+        id="yearOfStudy"
+        name="yearOfStudy"
+        value={value}
+        onChange={onChange}
+        required
+        className="w-full rounded-sm border border-paper/20 bg-paper/5 px-3 py-2 text-sm text-paper focus:border-lab-500 focus:outline-none"
+      >
+        <option value="" disabled className="text-ink">
+          Select your year
+        </option>
+        <option value="Y1" className="text-ink">Year 1</option>
+        <option value="Y2" className="text-ink">Year 2</option>
+        <option value="Y3" className="text-ink">Year 3</option>
+        <option value="Y4" className="text-ink">Year 4</option>
+      </select>
     </div>
   );
 }

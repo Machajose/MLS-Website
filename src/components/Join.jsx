@@ -26,7 +26,7 @@ export default function Join() {
                 Email the committee
               </a>
               
-                <a href="https://wa.me/254112003231"
+                <a href="https://wa.me/254114655750"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-sm border border-paper/25 px-5 py-2.5 text-center text-sm font-semibold text-paper transition-colors hover:bg-paper/10"
