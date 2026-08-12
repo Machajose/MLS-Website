@@ -28,11 +28,12 @@ export default function Navbar({ dark, setDark }) {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
-        <a href="#top" className="flex items-center">
-          <span className="font-display text-lg font-semibold tracking-tight text-lab-900 dark:text-dark-ink">
-            MUTMLSA
-          </span>
-        </a>
+        <a href="#top" className="flex items-center gap-2.5">
+  <img src={logo} alt="MUTMLSA logo" className="h-8 w-8 rounded-full object-cover" />
+  <span className="font-display text-lg font-semibold tracking-tight text-lab-900 dark:text-dark-ink">
+    MUTMLSA
+  </span>
+</a>
 
         <ul className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
