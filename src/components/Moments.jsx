@@ -64,8 +64,17 @@ import committee2024_4 from "../assets/moments/2024-2025/committee/4 th Year Rep
 
 import committee2025_1 from "../assets/moments/2025-2026/committee/Esipila.jpeg";
 import committee2025_2 from "../assets/committee/Cherrily.jpeg";
-//import committee2025_3 from "../assests"
-//import committee2025_4 from "..assets/committee/Antonia.png";
+import committee2025_3 from "../assets/committee/Tonia.jpeg";
+import committee2025_4 from "../assets/committee/James.jpeg";
+import committee2025_5 from "../assets/committee/Anna.jpeg";
+import committee2025_6 from "../assets/committee/brianlore.jpeg";
+import committee2025_7 from "../assets/committee/Ibrahim.jpeg";
+//import committee2025_8 from "../assets/committee/Racheal.jpeg";
+//import committee2025_9 from "../assets/moments/2025-2026/committee/.jpeg"
+
+
+
+
 
 import gameNightVideo from "../assets/moments/2025-2026/sem 2/game-night/game-night video.mp4";
 
@@ -109,10 +118,15 @@ const MOMENTS_BY_PERIOD = [
         tagline: "Proof that leadership and lab coats go hand in hand",
         type: "slideshow",
         photos: [
-          { src: committee2025_1, label: "Esipila - Chairperson" },
+          { src: committee2025_1, label: "Brian Esipila - Chairperson" },
           { src: committee2025_2, label: "Cherrily Ochieng' — Vice Chairperson" },
-         // { src: committee2024_3, label: "Alubaka Brian — Secretary General" },
-          //{ src: committee2025_4, label: "Antonia Muthoni — Secretary" },
+          { src: committee2025_3, label: "Antonia Muthoni— Secretary General" },
+          {src : committee2025_4, label: "James Gitahi - Treasurer"},
+          {src: committee2025_5, label: "Anna Kendy - Sargent at Arms"},
+          {src: committee2025_6, label: "Brian Lore - Public Relations Officer"},
+          {src: committee2025_7, label: "Ibrahim Mbugua - Third Year Representative"},
+          //{src: committee2025_8, label: "Rachael - Second Year Representative"},
+          //{src: committee2025_9, label: " Michelle Mumbua - First Year Representative"}
         ],
       },
     ],
