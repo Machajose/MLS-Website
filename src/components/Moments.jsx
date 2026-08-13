@@ -49,7 +49,6 @@ import handoverAlvin1 from "../assets/moments/2023-2024/sem 2/handover/02.jpeg";
 import handoverAlvin2 from "../assets/moments/2023-2024/sem 2/handover/03.jpeg";
 import handoverAlvin3 from "../assets/moments/2023-2024/sem 2/handover/04.jpeg";
 
-
 import professionalExchange from "../assets/moments/2024-2025/sem 2/JKUAT-professional-exchange/01.jpeg";
 import professionalExchange1 from "../assets/moments/2024-2025/sem 2/JKUAT-professional-exchange/02.jpeg";
 import professionalExchange2 from "../assets/moments/2024-2025/sem 2/JKUAT-professional-exchange/03.jpeg";
@@ -58,6 +57,15 @@ import kemelsaElections from "../assets/moments/2024-2025/sem 2/kemelsa-election
 import kemelsaElections1 from "../assets/moments/2024-2025/sem 2/kemelsa-elections/02.jpg";
 import kemelsaElections2 from "../assets/moments/2024-2025/sem 2/kemelsa-elections/03.jpg";
 
+import committee2024_1 from "../assets/moments/2024-2025/committee/Zandria.jpeg";
+import committee2024_2 from "../assets/moments/2024-2025/committee/Felix.jpeg";
+import committee2024_3 from "../assets/moments/2024-2025/committee/Secretary General.jpeg";
+import committee2024_4 from "../assets/moments/2024-2025/committee/4 th Year Rep.jpeg";
+
+import committee2025_1 from "../assets/moments/2025-2026/committee/Esipila.jpeg";
+import committee2025_2 from "../assets/committee/Cherrily.jpeg";
+//import committee2025_3 from "../assests"
+//import committee2025_4 from "..assets/committee/Antonia.png";
 
 import gameNightVideo from "../assets/moments/2025-2026/sem 2/game-night/game-night video.mp4";
 
@@ -65,6 +73,7 @@ import gameNightVideo from "../assets/moments/2025-2026/sem 2/game-night/game-ni
 // then by semester, then individual events. Most recent first — add
 // new academic years/semesters/events here as photos come in. Empty
 // `events: []` arrays are placeholders for years not yet populated.
+
 const MOMENTS_BY_PERIOD = [
   {
     academicYear: "2025/2026",
@@ -84,15 +93,27 @@ const MOMENTS_BY_PERIOD = [
       },
       {
         caption: "Club Symposium",
+        tagline: "Big words, bigger group photos",
         type: "slideshow",
         photos: [symposium1, symposium6, symposium3, symposium8, symposium5, symposium2, symposium7, symposium4],
         objectPosition: "center 30%",
       },
       {
         caption: "Game Night",
-        tagline: "The night strategy,skills and KAhoot! met competitive chaos",
+        tagline: "The night strategy, skills and Kahoot! met competitive chaos",
         type: "video",
         video: gameNightVideo,
+      },
+      {
+        caption: "2025/2026 Committee",
+        tagline: "Proof that leadership and lab coats go hand in hand",
+        type: "slideshow",
+        photos: [
+          { src: committee2025_1, label: "Esipila - Chairperson" },
+          { src: committee2025_2, label: "Cherrily Ochieng' — Vice Chairperson" },
+         // { src: committee2024_3, label: "Alubaka Brian — Secretary General" },
+          //{ src: committee2025_4, label: "Antonia Muthoni — Secretary" },
+        ],
       },
     ],
   },
@@ -113,29 +134,42 @@ const MOMENTS_BY_PERIOD = [
     academicYear: "2024/2025",
     semester: "Sem 2",
     events: [
-      { caption: "Handover Ceremony ", 
-        type: "slideshow" ,
+      {
+        caption: "Handover Ceremony",
+        tagline: "Out with the old cohort, in with the ambitious",
+        type: "slideshow",
         photos: [handoverZandria7, handoverZandria2, handoverZandria3, handoverZandria4, handoverZandria5, handoverZandria6, handoverZandria],
       },
-
-      { caption: "KeMELSA ELECTIONS 2025 hosted by MUTMLSA",
-        date : "March 22nd 2025",
-         type: "slideshow",
-         photos: [kemelsaElections, kemelsaElections1, kemelsaElections2]
-        },
-
-      { caption: "JKUAT Professional Exchange",
+      {
+        caption: "KeMELSA Elections 2025 hosted by MUTMLSA",
+        date: "March 22nd 2025",
+        type: "slideshow",
+        photos: [kemelsaElections, kemelsaElections1, kemelsaElections2],
+      },
+      {
+        caption: "JKUAT Professional Exchange",
         date: "March 8th 2025",
-         type: "slideshow" ,
-         photos:[professionalExchange2, professionalExchange1, professionalExchange]
-        },
+        type: "slideshow",
+        photos: [professionalExchange2, professionalExchange1, professionalExchange],
+      },
+      {
+        caption: "2024/2025 Committee",
+        tagline: "The board that kept things running",
+        type: "slideshow",
+        photos: [
+          { src: committee2024_1, label: "Zandria Adema — Chairperson" },
+          { src: committee2024_2, label: "Felix Oyugi — Vice Chairperson" },
+          { src: committee2024_3, label: "Alubaka Brian — Secretary General" },
+          { src: committee2024_4, label: "Mary Mwangi — 4th Year Representative" },
+        ],
+      },
     ],
   },
   {
     academicYear: "2024/2025",
     semester: "Sem 1",
     events: [
-      { caption: "Soon to be Uploaded..", type: "placeholder" },
+      { caption: "Soon to be uploaded..", type: "placeholder" },
       { caption: "Soon to be uploaded..", type: "placeholder" },
     ],
   },
@@ -143,11 +177,17 @@ const MOMENTS_BY_PERIOD = [
     academicYear: "2023/2024",
     semester: "Sem 2",
     events: [
-      { caption: "Handover Ceremony",
-         type: "slideshow" ,
-         photos:[ handoverAlvin, handoverAlvin1, handoverAlvin2, handoverAlvin3]
+      {
+        caption: "Handover Ceremony",
+        tagline: "Same association, freshly re-calibrated",
+        type: "slideshow",
+        photos: [handoverAlvin, handoverAlvin1, handoverAlvin2, handoverAlvin3],
       },
-
+      {
+        caption: "2023/2024 Committee",
+        tagline: "Where it all started",
+        type: "placeholder",
+      },
       { caption: "Careers Beyond the Bench Talk", type: "placeholder" },
     ],
   },
@@ -267,20 +307,20 @@ function MomentTile({ moment, seed, onOpen }) {
         </div>
       </div>
       <div className="bg-lab-50/50 p-4 dark:bg-dark-surface/40">
-  <p className="font-display text-sm font-semibold text-lab-900 dark:text-dark-ink">
-    {moment.caption}
-  </p>
-  {moment.tagline && (
-    <p className="mt-1 text-xs italic text-ink-soft dark:text-dark-ink-soft">
-      {moment.tagline}
-    </p>
-  )}
-  {moment.date && (
-    <p className="label-tag mt-1 text-ink-soft dark:text-dark-ink-soft">
-      {moment.date}
-    </p>
-  )}
-</div>
+        <p className="font-display text-sm font-semibold text-lab-900 dark:text-dark-ink">
+          {moment.caption}
+        </p>
+        {moment.tagline && (
+          <p className="mt-1 text-xs italic text-ink-soft dark:text-dark-ink-soft">
+            {moment.tagline}
+          </p>
+        )}
+        {moment.date && (
+          <p className="label-tag mt-1 text-ink-soft dark:text-dark-ink-soft">
+            {moment.date}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
@@ -288,13 +328,17 @@ function MomentTile({ moment, seed, onOpen }) {
 function Slideshow({ photos, seed = 0, interactive = false, natural = false, objectPosition = "center" }) {
   const [index, setIndex] = useState(0);
 
+  const normalized = photos.map((p) =>
+    typeof p === "string" ? { src: p, label: null } : p
+  );
+
   useEffect(() => {
-    if (photos.length <= 1) return;
+    if (normalized.length <= 1) return;
     const offset = (seed * 900) % 3200;
     let interval;
     const startTimer = setTimeout(() => {
       interval = setInterval(() => {
-        setIndex((prev) => (prev + 1) % photos.length);
+        setIndex((prev) => (prev + 1) % normalized.length);
       }, 3400);
     }, offset);
 
@@ -302,15 +346,17 @@ function Slideshow({ photos, seed = 0, interactive = false, natural = false, obj
       clearTimeout(startTimer);
       if (interval) clearInterval(interval);
     };
-  }, [photos.length, seed]);
+  }, [normalized.length, seed]);
+
+  const current = normalized[index];
 
   return (
     <div className={natural ? "relative w-full" : "relative h-full w-full"}>
-      {photos.map((src, i) => (
+      {normalized.map((p, i) => (
         <motion.img
-          key={src}
-          src={src}
-          alt=""
+          key={p.src}
+          src={p.src}
+          alt={p.label || ""}
           className={
             natural
               ? "max-h-[75vh] w-full object-contain"
@@ -325,9 +371,16 @@ function Slideshow({ photos, seed = 0, interactive = false, natural = false, obj
           transition={{ duration: 0.6, ease: "easeInOut" }}
         />
       ))}
-      {photos.length > 1 && (
+
+      {current?.label && (
+        <div className="absolute bottom-7 left-1/2 max-w-[90%] -translate-x-1/2 rounded-sm bg-lab-900/80 px-3 py-1.5 text-center text-xs font-semibold text-paper backdrop-blur-sm">
+          {current.label}
+        </div>
+      )}
+
+      {normalized.length > 1 && (
         <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1.5">
-          {photos.map((_, i) =>
+          {normalized.map((_, i) =>
             interactive ? (
               <button
                 key={i}
@@ -417,6 +470,9 @@ function Lightbox({ moment, onClose }) {
 
         <div className="p-5">
           <p className="font-display text-lg font-semibold text-paper">{moment.caption}</p>
+          {moment.tagline && (
+            <p className="mt-1 text-sm italic text-paper/70">{moment.tagline}</p>
+          )}
         </div>
       </motion.div>
     </motion.div>
