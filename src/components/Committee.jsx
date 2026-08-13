@@ -25,7 +25,7 @@ const MEMBERS = [
   { role: "Public Relations Officer", name: "Julius Kimani", initials: "PR", photo: publicRelationsOfficer },
   {role:  "Fourth Year Representative", name: "Ibrahim Mbugua", initials: "4th Yr Rep", photo: fourthYearRepresentative},
   { role: "Third Year Representative", name: "Anna Keddy", initials: " 3rd Yr Rep", photo: thirdYearRepresentative },
-  { role: "Second Year Representative", name: "Sharon Akinyi", initials: " 2nd Yr Rep", photo: secondYearRepresentative },
+  { role: "Second Year Representative", name: "Sharon Akinyi", initials: " 2nd Yr Rep", photo: null },
   { role: "First Year Representative", name: "To be announced", initials: " 1st Yr Rep", photo: null },
 ];
 
