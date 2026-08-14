@@ -66,7 +66,7 @@ import committee2025_1 from "../assets/moments/2025-2026/committee/Esipila.jpeg"
 import committee2025_2 from "../assets/committee/Cherrily.jpeg";
 import committee2025_3 from "../assets/committee/Tonia.jpeg";
 import committee2025_4 from "../assets/committee/James.jpeg";
-import committee2025_5 from "../assets/committee/Anna.jpeg";
+import committee2025_5 from "../assets/moments/2025-2026/committee/Kendy.jpeg";
 import committee2025_6 from "../assets/committee/brianlore.jpeg";
 import committee2025_7 from "../assets/committee/Ibrahim.jpeg";
 //import committee2025_8 from "../assets/committee/Racheal.jpeg";
