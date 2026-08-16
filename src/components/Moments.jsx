@@ -48,6 +48,7 @@ import handoverAlvin from "../assets/moments/2023-2024/sem 2/handover/01.jpeg";
 import handoverAlvin1 from "../assets/moments/2023-2024/sem 2/handover/02.jpeg";
 import handoverAlvin2 from "../assets/moments/2023-2024/sem 2/handover/03.jpeg";
 import handoverAlvin3 from "../assets/moments/2023-2024/sem 2/handover/04.jpeg";
+import handoverAlvin4 from "../assets/moments/2023-2024/sem 2/handover/06.jpg";
 
 import professionalExchange from "../assets/moments/2024-2025/sem 2/JKUAT-professional-exchange/01.jpeg";
 import professionalExchange1 from "../assets/moments/2024-2025/sem 2/JKUAT-professional-exchange/02.jpeg";
@@ -71,6 +72,15 @@ import committee2025_6 from "../assets/committee/brianlore.jpeg";
 import committee2025_7 from "../assets/committee/Ibrahim.jpeg";
 //import committee2025_8 from "../assets/committee/Racheal.jpeg";
 //import committee2025_9 from "../assets/moments/2025-2026/committee/.jpeg"
+
+import Launch1 from "../assets/moments/2023-2024/sem 2/Launch/03.jpg";
+import Launch2 from "../assets/moments/2023-2024/sem 2/Launch/06.jpg";
+import Launch3 from "../assets/moments/2023-2024/sem 2/Launch/05.jpg";
+import Launch4 from "../assets/moments/2023-2024/sem 2/Launch/04.jpg";
+import Launch5 from "../assets/moments/2023-2024/sem 2/Launch/07.jpg";
+import Launch6 from "../assets/moments/2023-2024/sem 2/Launch/08.jpg";
+import Launch7 from "../assets/moments/2023-2024/sem 2/Launch/01.jpg";
+import Launch8 from "../assets/moments/2023-2024/sem 2/Launch/02.jpg";
 
 
 
@@ -191,11 +201,19 @@ const MOMENTS_BY_PERIOD = [
     academicYear: "2023/2024",
     semester: "Sem 2",
     events: [
+
+      {
+        caption: "MUTMLSA Launch",
+        tagline: "The heroes,visionaries and champions we remember to this day",
+        type: "slideshow",
+        photos:[Launch1, Launch2, Launch3, Launch4, Launch5,Launch6, Launch7, Launch8]
+
+      },
       {
         caption: "Handover Ceremony",
         tagline: "Same association, freshly re-calibrated",
         type: "slideshow",
-        photos: [handoverAlvin, handoverAlvin1, handoverAlvin2, handoverAlvin3],
+        photos: [handoverAlvin, handoverAlvin1, handoverAlvin2, handoverAlvin3, handoverAlvin4],
       },
       {
         caption: "2023/2024 Committee",
