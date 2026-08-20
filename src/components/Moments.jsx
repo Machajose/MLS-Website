@@ -58,6 +58,11 @@ import kemelsaElections from "../assets/moments/2024-2025/sem 2/kemelsa-election
 import kemelsaElections1 from "../assets/moments/2024-2025/sem 2/kemelsa-elections/02.jpg";
 import kemelsaElections2 from "../assets/moments/2024-2025/sem 2/kemelsa-elections/03.jpg";
 
+//Committee 2023/2024
+import committee2023_1 from "../assets/moments/2023-2024/committee/01.jpeg";
+//import committee2023_2 from "../assets/moments/2023-2024/committee/Joanna.jpeg";
+
+
 import committee2024_1 from "../assets/moments/2024-2025/committee/Zandria.jpeg";
 import committee2024_2 from "../assets/moments/2024-2025/committee/Felix.jpeg";
 import committee2024_3 from "../assets/moments/2024-2025/committee/Secretary General.jpeg";
@@ -69,7 +74,8 @@ import committee2025_3 from "../assets/committee/Tonia.jpeg";
 import committee2025_4 from "../assets/committee/James.jpeg";
 import committee2025_5 from "../assets/moments/2025-2026/committee/Kendy.jpeg";
 import committee2025_6 from "../assets/committee/brianlore.jpeg";
-import committee2025_7 from "../assets/committee/Ibrahim.jpeg";
+import committee2025_7 from "../assets/moments/2025-2026/committee/Cynthia.jpeg";
+import committee2025_8 from "../assets/committee/Ibrahim.jpeg";
 //import committee2025_8 from "../assets/committee/Racheal.jpeg";
 //import committee2025_9 from "../assets/moments/2025-2026/committee/.jpeg"
 
@@ -128,13 +134,14 @@ const MOMENTS_BY_PERIOD = [
         tagline: "Proof that leadership and lab coats go hand in hand",
         type: "slideshow",
         photos: [
-          { src: committee2025_1, label: "Brian Esipila - Chairperson" },
+          { src: committee2025_1, label: "Brian Esipila - Chairperson"},
           { src: committee2025_2, label: "Cherrily Ochieng' — Vice Chairperson" },
           { src: committee2025_3, label: "Antonia Muthoni— Secretary General" },
           {src : committee2025_4, label: "James Gitahi - Treasurer"},
           {src: committee2025_5, label: "Anna Kendy - Sargent at Arms"},
-          {src: committee2025_6, label: "Brian Lore - Public Relations Officer"},
-          {src: committee2025_7, label: "Ibrahim Mbugua - Third Year Representative"},
+          {src: committee2025_6, label: "Brian Otieno - Public Relations Officer"},
+          {src: committee2025_7, label: "Cynthia - Fourth Year Representative"},
+          {src: committee2025_8, label: "Ibrahim Mbugua - Third Year Representative"},
           //{src: committee2025_8, label: "Rachael - Second Year Representative"},
           //{src: committee2025_9, label: " Michelle Mumbua - First Year Representative"}
         ],
@@ -202,6 +209,18 @@ const MOMENTS_BY_PERIOD = [
     semester: "Sem 2",
     events: [
 
+      {
+        caption: "Committee 2023/2024",
+        tagline: "The Reason We Are",
+        type: "slideshow",
+        photos: [
+          {src: committee2023_1, label : "Alvin - Chairperson"},
+          //{src: committee2023_2, labe: :"Joanna- Vice Cairperson"}
+        ],
+
+
+      },
+      
       {
         caption: "MUTMLSA Launch",
         tagline: "The heroes,visionaries and champions we remember to this day",

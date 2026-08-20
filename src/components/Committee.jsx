@@ -16,7 +16,7 @@ import secondYearRepresentative from "../assets/committee/Sharon.jpeg";
 
 const MEMBERS = [
   { role: "Chairperson", name: "Cherrily Ochieng", initials: "CP", photo: chairPerson },
-  { role: "Vice Chairperson", name: "Brian Lore", initials: "VC", photo: viceChairperson },
+  { role: "Vice Chairperson", name: "Brian Otieno", initials: "VC", photo: viceChairperson },
   { role: "Secretary General", name: "Antonia Muthoni", initials: "SG", photo: secretaryGeneral },
   { role: "Vice Secretary", name: "Kelvin Masha", initials: "VS", photo: viceSecretary },
   { role: "Treasurer", name: "James Gitahi", initials: "TR", photo: treasurer },
