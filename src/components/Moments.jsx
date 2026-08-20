@@ -209,17 +209,6 @@ const MOMENTS_BY_PERIOD = [
     semester: "Sem 2",
     events: [
 
-      {
-        caption: "Committee 2023/2024",
-        tagline: "The Reason We Are",
-        type: "slideshow",
-        photos: [
-          {src: committee2023_1, label : "Alvin - Chairperson"},
-          //{src: committee2023_2, labe: :"Joanna- Vice Cairperson"}
-        ],
-
-
-      },
       
       {
         caption: "MUTMLSA Launch",
@@ -237,7 +226,11 @@ const MOMENTS_BY_PERIOD = [
       {
         caption: "2023/2024 Committee",
         tagline: "Where it all started",
-        type: "placeholder",
+        type: "slideshow",
+        photos: [
+          {src: committee2023_1, label : "Alvin - Chairperson"},
+          //{src: committee2023_2, labe: :"Joanna- Vice Cairperson"}
+        ],
       },
       { caption: "Careers Beyond the Bench Talk", type: "placeholder" },
     ],
