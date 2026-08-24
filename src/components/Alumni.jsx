@@ -30,7 +30,7 @@ const ALUMNI_CLASSES = [
   },
 
     {
-    year: "Class of 2024",
+    year: "Class of 2021",
     tagline: "Soon to be uploaded",
     photos: [],
   },
