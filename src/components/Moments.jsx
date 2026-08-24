@@ -60,7 +60,7 @@ import kemelsaElections2 from "../assets/moments/2024-2025/sem 2/kemelsa-electio
 
 //Committee 2023/2024
 import committee2023_1 from "../assets/moments/2023-2024/committee/01.jpeg";
-//import committee2023_2 from "../assets/moments/2023-2024/committee/Joanna.jpeg";
+import committee2023_2 from "../assets/moments/2023-2024/sem 2/Launch/05.jpg";
 
 
 import committee2024_1 from "../assets/moments/2024-2025/committee/Zandria.jpeg";
@@ -229,7 +229,7 @@ const MOMENTS_BY_PERIOD = [
         type: "slideshow",
         photos: [
           {src: committee2023_1, label : "Alvin - Chairperson"},
-          //{src: committee2023_2, labe: :"Joanna- Vice Cairperson"}
+          {src: committee2023_2, label :"From the Right we have Joanna the vice Chairperson and to the Left we have Lucy who was the Secretary"}
         ],
       },
       { caption: "Careers Beyond the Bench Talk", type: "placeholder" },
