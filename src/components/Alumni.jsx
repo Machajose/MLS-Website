@@ -2,45 +2,34 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Reveal from "./Reveal";
 
+// Class of 2024 Images
+import ClassOf2024_1 from "../assets/Alumni/2023-2024/03.jpeg";
+import ClassOf2024_2 from "../assets/Alumni/2023-2024/04.jpeg";
+import ClassOf2024_3 from "../assets/Alumni/2023-2024/06.jpeg";
+import ClassOf2024_4 from "../assets/Alumni/2023-2024/07.jpeg";
+import ClassOf2024_5 from "../assets/Alumni/2023-2024/09.jpeg";
 
-//Class of 2020 Images
-import ClassOf2020_1 from "../assets/Alumni/2023-2024/03.jpeg";
-import ClassOf2020_2 from "../assets/Alumni/2023-2024/04.jpeg";
-import ClassOf2020_3 from "../assets/Alumni/2023-2024/06.jpeg";
-import ClassOf2020_4 from "../assets/Alumni/2023-2024/07.jpeg";
-import ClassOf2020_5 from "../assets/Alumni/2023-2024/09.jpeg";
+// Class of 2026
+import ClassOf2026_1 from "../assets/Alumni/2025-2026/05.jpeg";
 
-//Class of 2021
-
-//Class of 2022
-import ClassOf2022_1 from "../assets/Alumni/2025-2026/05.jpeg";
 // Each entry is one graduating class — a group photo (or slideshow of a
 // few) identifying that year's cohort as a whole, not individual profiles.
-//
-// Add real imports at the top as photos come in, e.g.:
-//   import classOf2023_1 from "../assets/alumni/2023/01.jpeg";
-// then reference them below.
 const ALUMNI_CLASSES = [
-
-    {
-    year: "Class of 2022",
-    type: "slideshow",
-    tagline: "",
-    photos: [ClassOf2022_1],
+  {
+    year: "Class of 2026",
+    tagline: "On to the next adventure.This years heros!",
+    photos: [ClassOf2026_1],
   },
-
-    {
-    year: "Class of 2021",
+  {
+    year: "Class of 2025",
     tagline: "Soon to be uploaded",
     photos: [],
   },
   {
-    year: "Class of 2020",
+    year: "Class of 2024",
     tagline: "The first to walk out MUTMLSA graduates",
-    type: "slideshow",
-    photos: [ClassOf2020_1, ClassOf2020_2, ClassOf2020_3, ClassOf2020_4, ClassOf2020_5],
+    photos: [ClassOf2024_1, ClassOf2024_2, ClassOf2024_3, ClassOf2024_4, ClassOf2024_5],
   },
-  
 ];
 
 export default function Alumni() {
@@ -153,87 +142,5 @@ function ClassLightbox({ classData, onClose }) {
         </div>
       </motion.div>
     </motion.div>
-  );
-}
-function Slideshow({ photos, seed = 0, interactive = false, natural = false, objectPosition = "center" }) {
-  const [index, setIndex] = useState(0);
-
-  const normalized = photos.map((p) =>
-    typeof p === "string" ? { src: p, label: null } : p
-  );
-
-  useEffect(() => {
-    if (normalized.length <= 1) return;
-    const offset = (seed * 900) % 3200;
-    let interval;
-    const startTimer = setTimeout(() => {
-      interval = setInterval(() => {
-        setIndex((prev) => (prev + 1) % normalized.length);
-      }, 3400);
-    }, offset);
-
-    return () => {
-      clearTimeout(startTimer);
-      if (interval) clearInterval(interval);
-    };
-  }, [normalized.length, seed]);
-
-  const current = normalized[index];
-
-  return (
-    <div className={natural ? "relative w-full" : "relative h-full w-full"}>
-      {normalized.map((p, i) => (
-        <motion.img
-          key={p.src}
-          src={p.src}
-          alt={p.label || ""}
-          className={
-            natural
-              ? "max-h-[75vh] w-full object-contain"
-              : "absolute inset-0 h-full w-full object-cover"
-          }
-          style={
-            natural
-              ? { position: i === index ? "relative" : "absolute", top: 0, left: 0 }
-              : { objectPosition: objectPosition || "center" }
-          }
-          animate={{ opacity: i === index ? 1 : 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-        />
-      ))}
-
-      {current?.label && (
-        <div className="absolute bottom-7 left-1/2 max-w-[90%] -translate-x-1/2 rounded-sm bg-lab-900/80 px-3 py-1.5 text-center text-xs font-semibold text-paper backdrop-blur-sm">
-          {current.label}
-        </div>
-      )}
-
-      {normalized.length > 1 && (
-        <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1.5">
-          {normalized.map((_, i) =>
-            interactive ? (
-              <button
-                key={i}
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIndex(i);
-                }}
-                className={`h-1.5 w-1.5 cursor-pointer rounded-full transition-colors ${
-                  i === index ? "bg-paper" : "bg-paper/30"
-                }`}
-              />
-            ) : (
-              <span
-                key={i}
-                className={`h-1.5 w-1.5 rounded-full transition-colors ${
-                  i === index ? "bg-paper" : "bg-paper/30"
-                }`}
-              />
-            )
-          )}
-        </div>
-      )}
-    </div>
   );
 }
