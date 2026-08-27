@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -18,12 +20,20 @@ import Alumni from "./components/Alumni";
 export default function App() {
   const [dark, setDark] = useDarkMode();
 
+  useEffect(() => {
+    if (window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+      }
+    }
+  }, []);
+
   if (window.location.pathname === "/admin") {
     return <AdminPortal />;
   }
 
   return (
-    
     <div className="min-h-screen bg-paper text-ink dark:bg-dark-bg dark:text-dark-ink">
       <TopBar />
       <Navbar dark={dark} setDark={setDark} />
@@ -40,14 +50,14 @@ export default function App() {
         <Reveal>
           <Moments />
         </Reveal>
-        <Alumni/>
+        <Alumni />
         <Committee />
         <Reveal>
           <Join />
         </Reveal>
       </main>
       <Footer />
-<ChatWidget />
-</div>
+      <ChatWidget />
+    </div>
   );
 }
