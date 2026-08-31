@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Reveal from "./Reveal";
 
@@ -11,19 +11,19 @@ import ClassOf2024_5 from "../assets/Alumni/2023-2024/09.jpeg";
 
 // Class of 2026
 import ClassOf2026_1 from "../assets/Alumni/2025-2026/05.jpeg";
+import ClassOf2026_2 from "../assets/Alumni/2025-2026/06.jpeg";
+import ClassOf2026_3 from "../assets/Alumni/2025-2026/07.jpeg";
+import ClassOf2026_4 from "../assets/Alumni/2025-2026/08.jpeg";
+import ClassOf2026_5 from "../assets/Alumni/2025-2026/09.jpeg";
+import ClassOf2026_6 from "../assets/Alumni/2025-2026/010.jpeg";
 
 // Each entry is one graduating class — a group photo (or slideshow of a
 // few) identifying that year's cohort as a whole, not individual profiles.
 const ALUMNI_CLASSES = [
   {
     year: "Class of 2026",
-    tagline: "On to the next adventure.This years heros!",
-    photos: [ClassOf2026_1],
-  },
-  {
-    year: "Class of 2025",
-    tagline: "Soon to be uploaded",
-    photos: [],
+    tagline: "Our heroes this year! We are proud of you!!",
+    photos: [ClassOf2026_1, ClassOf2026_2, ClassOf2026_3, ClassOf2026_4, ClassOf2026_5, ClassOf2026_6],
   },
   {
     year: "Class of 2024",
@@ -50,7 +50,7 @@ export default function Alumni() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {ALUMNI_CLASSES.map((c, i) => (
             <Reveal key={c.year} delay={i * 0.08}>
-              <ClassTile classData={c} onOpen={() => setOpenIndex(i)} />
+              <ClassTile classData={c} seed={i} onOpen={() => setOpenIndex(i)} />
             </Reveal>
           ))}
         </div>
@@ -68,7 +68,7 @@ export default function Alumni() {
   );
 }
 
-function ClassTile({ classData, onOpen }) {
+function ClassTile({ classData, seed, onOpen }) {
   const hasPhotos = classData.photos.length > 0;
 
   return (
@@ -83,9 +83,9 @@ function ClassTile({ classData, onOpen }) {
         hasPhotos ? "cursor-pointer transition-transform hover:-translate-y-0.5" : ""
       }`}
     >
-      <div className="flex aspect-[4/3] items-center justify-center bg-lab-900">
+      <div className="relative flex aspect-[4/3] items-center justify-center bg-lab-900">
         {hasPhotos ? (
-          <img src={classData.photos[0]} alt={classData.year} className="h-full w-full object-cover" />
+          <Slideshow photos={classData.photos} seed={seed} interactive={false} />
         ) : (
           <span className="label-tag text-lab-500/60">Photo coming soon</span>
         )}
@@ -105,6 +105,18 @@ function ClassTile({ classData, onOpen }) {
 }
 
 function ClassLightbox({ classData, onClose }) {
+  useEffect(() => {
+    function handleKey(e) {
+      if (e.key === "Escape") onClose();
+    }
+    window.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
   return (
     <motion.div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-lab-900/90 p-5 backdrop-blur-sm"
@@ -129,11 +141,11 @@ function ClassLightbox({ classData, onClose }) {
         >
           ✕
         </button>
-        <div className="max-h-[75vh] w-full space-y-2 overflow-y-auto bg-lab-900 p-2">
-          {classData.photos.map((src, i) => (
-            <img key={i} src={src} alt={`${classData.year} ${i + 1}`} className="w-full rounded-sm object-contain" />
-          ))}
+
+        <div className="max-h-[75vh] w-full bg-lab-900">
+          <Slideshow photos={classData.photos} seed={0} interactive natural />
         </div>
+
         <div className="p-5">
           <p className="font-display text-lg font-semibold text-paper">{classData.year}</p>
           {classData.tagline && (
@@ -142,5 +154,115 @@ function ClassLightbox({ classData, onClose }) {
         </div>
       </motion.div>
     </motion.div>
+  );
+}
+
+function Slideshow({ photos, seed = 0, interactive = false, natural = false }) {
+  const [index, setIndex] = useState(0);
+
+  const normalized = photos.map((p) =>
+    typeof p === "string" ? { src: p, label: null } : p
+  );
+
+  useEffect(() => {
+    if (normalized.length <= 1) return;
+    const offset = (seed * 900) % 3200;
+    let interval;
+    const startTimer = setTimeout(() => {
+      interval = setInterval(() => {
+        setIndex((prev) => (prev + 1) % normalized.length);
+      }, 3400);
+    }, offset);
+
+    return () => {
+      clearTimeout(startTimer);
+      if (interval) clearInterval(interval);
+    };
+  }, [normalized.length, seed]);
+
+  const current = normalized[index];
+
+  return (
+    <div className={natural ? "relative w-full" : "relative h-full w-full"}>
+      {normalized.map((p, i) => (
+        <motion.div
+          key={p.src}
+          style={
+            natural
+              ? { position: i === index ? "relative" : "absolute", top: 0, left: 0, width: "100%" }
+              : { position: "absolute", inset: 0 }
+          }
+          animate={{ opacity: i === index ? 1 : 0 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        >
+          {natural ? (
+            <ZoomableImage
+              src={p.src}
+              alt={p.label || ""}
+              className="max-h-[75vh] w-full object-contain"
+            />
+          ) : (
+            <img
+              src={p.src}
+              alt={p.label || ""}
+              className="h-full w-full object-cover"
+            />
+          )}
+        </motion.div>
+      ))}
+
+      {current?.label && (
+        <div className="absolute bottom-7 left-1/2 max-w-[90%] -translate-x-1/2 rounded-sm bg-lab-900/80 px-3 py-1.5 text-center text-xs font-semibold text-paper backdrop-blur-sm">
+          {current.label}
+        </div>
+      )}
+
+      {normalized.length > 1 && (
+        <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1.5">
+          {normalized.map((_, i) =>
+            interactive ? (
+              <button
+                key={i}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIndex(i);
+                }}
+                className={`h-1.5 w-1.5 cursor-pointer rounded-full transition-colors ${
+                  i === index ? "bg-paper" : "bg-paper/30"
+                }`}
+              />
+            ) : (
+              <span
+                key={i}
+                className={`h-1.5 w-1.5 rounded-full transition-colors ${
+                  i === index ? "bg-paper" : "bg-paper/30"
+                }`}
+              />
+            )
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ZoomableImage({ src, alt, className }) {
+  const [zoomed, setZoomed] = useState(false);
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={`${className} transition-transform duration-200 ${
+        zoomed ? "scale-150 cursor-zoom-out" : "cursor-zoom-in"
+      }`}
+      onMouseDown={() => setZoomed(true)}
+      onMouseUp={() => setZoomed(false)}
+      onMouseLeave={() => setZoomed(false)}
+      onTouchStart={() => setZoomed(true)}
+      onTouchEnd={() => setZoomed(false)}
+      draggable={false}
+    />
   );
 }
