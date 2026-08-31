@@ -47,6 +47,17 @@ export default function Join() {
                 <InstagramIcon />
               </a>
             </div>
+            <div className="mt-4 flex items-center gap-3">
+  
+    <a href="https://chat.whatsapp.com/DK8nvisEgEGLEk5lCZbRjg?s=sh&p=a&mlu=4"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full border border-paper/25 px-4 py-2 text-sm font-semibold text-paper/80 transition-colors hover:border-lab-500 hover:text-lab-500"
+  >
+    <WhatsAppIcon className="h-4 w-4" />
+    Join the MUTMLSA WhatsApp group
+  </a>
+</div>
           </div>
 
           <JoinForm />
@@ -62,6 +73,19 @@ function InstagramIcon() {
       <rect x="2" y="2" width="20" height="20" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+function WhatsAppIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M17.472 14.382c-.297-.149-1.758-.868-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.99.581 3.845 1.583 5.404L2.5 22l4.75-1.045c1.492.897 3.242 1.41 5.754 1.41 5.518 0 10.004-4.486 10.004-10.004S17.522 2 12.004 2zm0 18.108c-1.885 0-3.632-.55-5.107-1.497l-.366-.229-3.028.666.596-3.05-.24-.376A8.083 8.083 0 013.92 12.004c0-4.463 3.62-8.084 8.084-8.084s8.084 3.62 8.084 8.084-3.621 8.104-8.084 8.104z" />
     </svg>
   );
 }
