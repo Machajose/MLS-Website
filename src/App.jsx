@@ -59,6 +59,7 @@ export default function App() {
       </main>
       <Footer />
       <ChatWidget />
+      <Analytics />
     </div>
   );
 }
