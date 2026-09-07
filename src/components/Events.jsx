@@ -2,7 +2,7 @@ import AmbientField from "./AmbientField";
 
 const EVENTS = [
   { date: "01 Sep 2026", tag: "Freshers", title: "Welcome & Recruitment Drive", desc: "Meet the board, learn what MUTMLSA does, and sign up on the spot — first-years welcome." },
-  { date: "Coming soon", tag: "Workshop", title: "Details to be announced", desc: "Date and details for our next workshop are still being finalised." },
+  { date: "07 Sep 2026", tag: "Meet the Tribe", title: "Together from the very first step", desc: "Welcome to day one—come meet your fellow classmates, find your community, and start this exciting journey together." },
   { date: "Coming soon", tag: "Outreach", title: "Details to be announced", desc: "Date and details for our next outreach event are still being finalised." },
   { date: "Coming soon", tag: "Talk", title: "Details to be announced", desc: "Date and details for our next talk are still being finalised." },
   { date: "Coming soon", tag: "Symposium", title: "Details to be announced", desc: "Date and details for our annual symposium are still being finalised." },
