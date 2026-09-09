@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { API_BASE_URL } from "../config/api";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -76,11 +78,11 @@ export default function ChatWidget() {
             className="fixed bottom-24 right-5 z-[90] flex h-[28rem] w-[22rem] max-w-[calc(100vw-2.5rem)] flex-col overflow-hidden rounded-sm border border-ink/10 bg-paper shadow-2xl dark:border-dark-border dark:bg-dark-bg"
           >
             <div className="flex items-center gap-2.5 border-b border-ink/10 bg-lab-900 px-4 py-3 dark:border-dark-border">
-  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-coral-500 text-paper">
-    <ChatIcon />
-  </div>
-  <p className="label-tag text-lab-500">MUTMLSA Assistant</p>
-</div>
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-coral-500 text-paper">
+                <ChatIcon />
+              </div>
+              <p className="label-tag text-lab-500">MUTMLSA Assistant</p>
+            </div>
 
             <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto p-4">
               {messages.map((m, i) => (
@@ -92,7 +94,29 @@ export default function ChatWidget() {
                       : "bg-lab-50 text-ink dark:bg-dark-surface/60 dark:text-dark-ink"
                   }`}
                 >
-                  {m.content}
+                  {m.role === "assistant" ? (
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        a: (props) => (
+                          
+                            <a{...props}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline text-coral-500 hover:text-coral-600"
+                          />
+                        ),
+                        p: (props) => <p {...props} className="mb-1 last:mb-0" />,
+                        ul: (props) => <ul {...props} className="list-disc pl-4 space-y-0.5" />,
+                        ol: (props) => <ol {...props} className="list-decimal pl-4 space-y-0.5" />,
+                        strong: (props) => <strong {...props} className="font-semibold" />,
+                      }}
+                    >
+                      {m.content}
+                    </ReactMarkdown>
+                  ) : (
+                    m.content
+                  )}
                 </div>
               ))}
               {loading && (
@@ -128,17 +152,12 @@ export default function ChatWidget() {
 function ChatIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      {/* head */}
       <rect x="4" y="8" width="16" height="12" rx="3" />
-      {/* antenna */}
       <line x1="12" y1="8" x2="12" y2="4" />
       <circle cx="12" cy="3" r="1.2" fill="currentColor" />
-      {/* eyes */}
       <circle cx="9" cy="13.5" r="1.2" fill="currentColor" stroke="none" />
       <circle cx="15" cy="13.5" r="1.2" fill="currentColor" stroke="none" />
-      {/* mouth */}
       <line x1="9" y1="17" x2="15" y2="17" />
-      {/* side antennae/ears */}
       <line x1="4" y1="12" x2="1.5" y2="12" />
       <line x1="20" y1="12" x2="22.5" y2="12" />
     </svg>
